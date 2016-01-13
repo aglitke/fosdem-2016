@@ -1,9 +1,87 @@
 Sweep Away the Garbage for scalable, fault-tolerant shared VM storage
 (40 minutes)
 
-In modern virtualization platforms virtual machine disks are stored in various kinds of shared repositories which are accessed by thousands of hypervisors simultaneously.  Changes are constant.  How can you provide high performance access to these resources while ensuring a consistent view of the world across all systems?  When bad things happen, how do you restore the integrity of the data?
+In modern virtualization platforms virtual machine disks are stored in various
+kinds of shared repositories which are accessed by thousands of hypervisors
+simultaneously.  Changes are constant.  How can you provide high performance
+access to these resources while ensuring a consistent view of the world across
+all systems?  When bad things happen, how do you restore the integrity of the
+data?
 
-This talk will share an approach being taken by the oVirt virtualization platform to address these challenging storage problems.  Complex storage tasks are broken down into simpler metadata and datapath operations.  A set of rules for handling each type will be established.  Through several examples, the audience will learn how a combination of SAN-based locking, atomic commitment, and garbage collection can help to achieve a high performance, fault-tolerant storage architecture.
+This talk will share an approach being taken by the oVirt virtualization
+platform to address these challenging storage problems.  Complex storage tasks
+are broken down into simpler metadata and datapath operations.  A set of rules
+for handling each type will be established.  Through several examples, the
+audience will learn how a combination of SAN-based locking, atomic commitment,
+and garbage collection can help to achieve a high performance, fault-tolerant
+storage architecture.
+
+
+Title slide
+
+I work on vm storage...
+    Show single VM on a single host accessing a disk on local storage
+    Change single VM to a deck of VMs
+    Change local storage to shared storage
+    Change single host to multiple hosts
+    Change single shared storage repo to multiple storage repos (one nfs one iscsi)
+
+End up at a diagram that depicts shared vm storage architecture
+    Talk about the properties of the architecture (block vs. file, scale, etc)
+
+What does oVirt put on storage?
+    Show a domain with metadata and images
+    Zoom into an image and show a chain of volumes
+    Zoom into a volume and show: metadata, data, and lease
+
+Show the messy pile of vms writing to their disks:
+    Is there a problem with this?
+    No.  Only one reader/writer per volume
+    This is a data path operation.
+
+Show a diagram of a host copying data from one disk to another
+    this is also a data path operation
+
+Types of problems:
+Conflicting operations
+Two VMs writing to the same volume
+    Diagram of two VMs writing to a volume with ??? inside of it
+    This is a data path conflict
+
+Two hosts writing to the storage domain metadata
+    Diagram of two hosts making changes to md with ??? inside of it
+    This is a metadata conflict
+
+Lots of other examples:
+    Copying from a disk while a VM is using it
+    Starting a VM while creating an offline snapshot
+
+Interrupted operations
+Partially created volume
+    Diagram of one host making half of a volume and one host confused when
+        getting a list of volumes
+
+Partially copied volume
+    Diagram of one volume copied halfway to another volume and a confused VM
+
+Lots of other examples:
+    Partially removed volume
+    Incomplete volume chain update
+
+Tools for maintaining order on storage:
+    SANLock prevents conflicting operations
+    Transactions with garbage collection mitigate interrupted operations
+
+Locking using shared storage
+    Hosts must be uniquely identifiable
+    Once identified, hosts can acquire resource leases
+        (associated with volumes and storage domains)
+    Rogue hosts must be denied further access to storage (fencing)
+    I could talk for twice the length of this timeslot on SANLock alone
+
+Transactions with garbage collection
+    Any operation affecting global state must appear to happen atomically
+    
 
 
 
