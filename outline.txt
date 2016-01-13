@@ -81,7 +81,7 @@ Locking using shared storage
 
 Transactions with garbage collection
     Any operation affecting global state must appear to happen atomically
-    
+
 
 
 
