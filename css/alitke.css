@@ -1,0 +1,11 @@
+#logo {
+	content: url("../images/ovirt-logo.png");
+	/*background: none;
+	border: 0;
+	box-shadow: none;*/
+    /*width: 10%; height: 10%; */
+	position: fixed; top: 0.25em; right: 0.25em;
+	width: 5em;
+	z-index: 1000;
+	opacity: 0.5;
+}

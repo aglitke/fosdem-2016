@@ -1,0 +1,57 @@
+Sweep Away the Garbage for scalable, fault-tolerant shared VM storage
+(40 minutes)
+
+In modern virtualization platforms virtual machine disks are stored in various kinds of shared repositories which are accessed by thousands of hypervisors simultaneously.  Changes are constant.  How can you provide high performance access to these resources while ensuring a consistent view of the world across all systems?  When bad things happen, how do you restore the integrity of the data?
+
+This talk will share an approach being taken by the oVirt virtualization platform to address these challenging storage problems.  Complex storage tasks are broken down into simpler metadata and datapath operations.  A set of rules for handling each type will be established.  Through several examples, the audience will learn how a combination of SAN-based locking, atomic commitment, and garbage collection can help to achieve a high performance, fault-tolerant storage architecture.
+
+
+
+Shared storage architecture
+DIA High level storage architecture
+ - Block or File based
+ - Centralized or distributed
+ - Hundreds of clients (hypervisors)
+ - Thousands of VMs reading and writing to their disks
+
+oVirt storage architecture
+DIA oVirt Storage organization
+ - A deck of storage domains
+ - A storage domain contains metadata and images
+ - An image is metadata that joins a group of related volumes together to
+   form a VM template or VM disk.
+ - A volume consists of: metadata, data, and a lease
+
+Maintaining order with sanlock
+ - Host IDs
+ - Domain locks: grant access to modify metadata on a domain
+ - Volume leases: grant exclusive access to volume data
+
+
+Types of storage access
+ - Datapath operations (protected by volume lease):
+   - Reading and writing to the volume data area
+   - Updates to some volume metadata (ie. Live volume resize, live snapshot)
+ - Metadata operations
+   - Everything else
+   - Creating/deleting volumes
+   - Converting a volume to a template
+
+Types of failures
+ - Interrupted storage operations (many causes)
+   - Network or power outage
+   - Software failure
+ - Environment reset
+   - ovirt-engine reinstalled or database cleared
+
+Managing datapath operations
+
+Managing metadata operations
+
+Create volume example
+
+Delete volume example
+
+Copy volume example
+
+

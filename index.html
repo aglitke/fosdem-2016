@@ -15,7 +15,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="css/alitke.css">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -37,9 +38,20 @@
 	<body>
 
 		<div class="reveal">
-
+			<img id="logo" />
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+				<section>
+					<h2>Sweep Away the Garbage</h2>
+					<h4>for scalable, fault-tolerant shared VM storage</h4>
+					<p>
+						<small>
+							Adam Litke - <a href=mailto:alitke@redhat.com>alitke@redhat.com</a><br>
+							FOSDEM 2016 - 30 January 2016
+						</small>
+					</p>
+				</section>
+
 				<section>
 					<h1>Reveal.js</h1>
 					<h3>The HTML Presentation Framework</h3>
@@ -392,7 +404,7 @@ Reveal.addEventListener( 'customevent', function() {
 				history: true,
 				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
