@@ -9,3 +9,11 @@
 	z-index: 1000;
 	opacity: 0.5;
 }
+
+#watermark {
+	font-size: 0.3em;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	bottom: 0.25em;
+}
