@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="615.93689"
-   height="296.29648"
+   width="155mm"
+   height="115mm"
    id="svg5421"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 615.9369 296.29648"
+   viewBox="0 0 549.21258 407.48031"
    sodipodi:docname="shared-storage.svg">
   <defs
      id="defs5423" />
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="329.9602"
-     inkscape:cy="137.251"
+     inkscape:cx="241.2183"
+     inkscape:cy="193.81954"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
@@ -36,12 +36,13 @@
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     showborder="false"
+     showborder="true"
      inkscape:showpageshadow="true"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0">
+     fit-margin-bottom="0"
+     units="mm">
     <inkscape:grid
        type="xygrid"
        id="grid6157"
@@ -64,10 +65,10 @@
      id="layer1"
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     transform="translate(-125.71355,-301.08767)">
+     transform="translate(-125.71355,-189.90385)">
     <g
        id="g7342"
-       transform="translate(-45.961885,13.999998)">
+       transform="matrix(0.8851825,0,0,0.89211901,-24.252521,5.3617784)">
       <path
          style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.19102383;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="path4952-4"
@@ -115,7 +116,8 @@
       </g>
     </g>
     <g
-       id="g9580">
+       id="g9580"
+       transform="matrix(0.8851825,0,0,0.89211901,16.432136,-7.127886)">
       <g
          id="g9502">
         <g
@@ -423,8 +425,8 @@
       </g>
     </g>
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 1;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 498.89553,319.23591 0,260"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.88864398;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.77728797, 0.88864399;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 458.04573,277.66854 0,231.95094"
        id="path9578"
        inkscape:connector-curvature="0" />
   </g>

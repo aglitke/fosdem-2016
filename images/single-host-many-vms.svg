@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="646.37604"
-   height="180.4838"
+   width="155mm"
+   height="115mm"
    id="svg5421"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 646.37605 180.4838"
+   viewBox="0 0 549.21262 407.48032"
    sodipodi:docname="single-host-many-vms.svg">
   <defs
      id="defs5423" />
@@ -26,22 +26,23 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="257.70277"
-     inkscape:cy="120.20014"
+     inkscape:cx="274.61267"
+     inkscape:cy="233.33722"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
-     showgrid="true"
+     showgrid="false"
      inkscape:window-width="1680"
      inkscape:window-height="984"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     showborder="false"
+     showborder="true"
      inkscape:showpageshadow="true"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0">
+     fit-margin-bottom="0"
+     units="mm">
     <inkscape:grid
        type="xygrid"
        id="grid6157"
@@ -64,9 +65,10 @@
      id="layer1"
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     transform="translate(107.08171,-300.51663)">
+     transform="translate(107.08171,-73.520103)">
     <g
-       id="g6189">
+       id="g6189"
+       transform="matrix(0.84499625,0,0,0.84499625,-15.084398,-49.040148)">
       <rect
          ry="7.99998"
          rx="7.99998"
@@ -194,7 +196,7 @@
     </g>
     <g
        id="g8613"
-       transform="translate(63.033007,47.740852)">
+       transform="matrix(0.84499625,0,0,0.84499625,38.178255,-8.6993085)">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect6597"

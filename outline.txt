@@ -16,6 +16,13 @@ audience will learn how a combination of SAN-based locking, atomic commitment,
 and garbage collection can help to achieve a high performance, fault-tolerant
 storage architecture.
 
+Color palette
+blue : 88aaee
+off-white: e7f6d3
+yellow: ddee77
+green: 559900
+brown: 7e3817
+slate: 3f4549
 
 Title slide
 
