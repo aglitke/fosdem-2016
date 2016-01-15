@@ -93,6 +93,92 @@
 				</section>
 
 				<section>
+					<section>
+						<!-- TODO: alter svg to place volumes in an image -->
+						<h2>Storage operation types</h2>
+						<img src="images/storage-operations.svg" class="plain" />
+					</section>
+
+					<section>
+						<h2>Datapath: volume access</h2>
+						<img src="images/concurrent-volume-access.svg" class="plain" />
+					</section>
+
+					<section>
+						<h2>Datapath: volume copy</h2>
+						<img src="images/host-copy-volume.svg" class="plain" />
+					</section>
+
+					<section>
+						<h2>Metadata: volume create</h2>
+						<img src="images/create-volume.svg" class="plain" />
+					</section>
+
+					<section>
+						<h2>Metadata: image delete</h2>
+						<img src="images/delete-image.svg" class="plain" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Shared storage pitfalls</h2>
+						<ul>
+							<li>Conflicting operations</li>
+							<ul>
+								<li>Two VMs writing to the same image</li>
+								<li>Two hosts updating storage domain metadata</li>
+								<li>Copying an image while its VM is running</li>
+								<li>Starting a VM while creating an offline snapshot</li>
+							</ul>
+							<li>Interrupted operations</li>
+							<ul>
+								<li>Creating a volume</li>
+								<li>Copying a volume</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Same VM on multiple hosts</h2>
+					</section>
+
+					<section>
+						<h2>Storage domain metadata updates</h2>
+					</section>
+
+					<section>
+						<h2>Run VM while making a template</h2>
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<h2>Test overlay</h2>
+					<img src="images/ovirt-image.svg" class="plain" />
+					<img src="images/ovirt-volume.svg" class="plain fragment"
+							style="position: absolute; top:100px; left:200px;"/>
+				</section>
+
+				<section>
+					<h2>Test tables</h2>
+					<table>
+						<tr>
+							<td><img src="images/ovirt-volume.svg" class="plain"</td>
+							<td style="vertical-align: middle;">
+								<ul>
+									<li>Item A</li>
+									<li>Item B</li>
+									<li>Item C</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
 					<h1>Reveal.js</h1>
 					<h3>The HTML Presentation Framework</h3>
 					<p>

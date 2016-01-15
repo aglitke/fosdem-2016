@@ -17,3 +17,9 @@
 	position: fixed;
 	bottom: 0.25em;
 }
+
+.reveal img.overlay {
+	position: absolute;
+	mar
+	height: inherit;
+}
