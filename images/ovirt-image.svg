@@ -119,8 +119,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="256.76544"
-     inkscape:cy="195.4748"
+     inkscape:cx="132.6682"
+     inkscape:cy="185.30604"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
@@ -165,7 +165,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -174,11 +174,6 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      transform="translate(-447.46661,227.04811)">
-    <path
-       inkscape:connector-curvature="0"
-       d="m -337.77314,353.71344 c -18.30444,-4.90469 -36.82842,0.70825 -49.61647,12.90201 -6.68123,-8.0308 -15.72799,-14.22893 -26.57918,-17.13631 -27.9267,-7.48279 -56.69616,9.12715 -64.17915,37.05391 -0.54987,2.05207 -0.69463,4.11563 -0.98952,6.16804 -25.14936,-2.61428 -49.21332,13.12987 -55.96463,38.32639 -6.68961,24.96596 5.93404,50.49446 28.62303,60.99079 -1.23333,2.67445 -2.38327,5.4297 -3.1711,8.36954 -7.48286,27.92676 9.14371,56.63445 37.07047,64.11724 13.67859,3.66566 27.50194,1.51319 38.97698,-4.87629 6.32419,13.52947 18.11535,24.41863 33.65903,28.58323 22.17751,5.9426 44.68206,-3.4709 56.83177,-21.51356 4.92153,3.48412 10.39203,6.36615 16.55426,8.01761 27.92669,7.48275 56.63428,-9.14405 64.11727,-37.07081 3.76287,-14.04299 1.43453,-28.25434 -5.35803,-39.90145 6.72241,-6.4101 11.9844,-14.52981 14.5626,-24.15189 7.48296,-27.92709 -9.14365,-56.63478 -37.07033,-64.11757 -2.93981,-0.78736 -5.88458,-1.23091 -8.81664,-1.50001 1.7378,-24.5241 -14.02389,-47.66213 -38.65036,-54.26087 z"
-       id="path4952"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <rect
        style="fill:none;fill-opacity:1;stroke:url(#Black);stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect10955"

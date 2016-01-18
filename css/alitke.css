@@ -20,6 +20,6 @@
 
 .reveal img.overlay {
 	position: absolute;
-	mar
+	width: inherit;
 	height: inherit;
 }
