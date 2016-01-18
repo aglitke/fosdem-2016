@@ -309,7 +309,7 @@
 				<section>
 					<section data-transition="none">
 						<h2>Example: Remove volume</h2>
-						<img src="images/ex-create-10.svg" class="plain" />
+						<img src="images/ex-remove-00.svg" class="plain" />
 					</section>
 					<section data-transition="none">
 						<h2>Acquire domain lease</h2>
@@ -339,23 +339,54 @@
 
 				<section>
 					<section>
-						<!-- TODO: Fill in steps -->
-						<h2>Example: Duplicate volume</h2>
-						start with state after first example
-						(meta) Create new volume
-						Acquire source image lock in shared mode
-							Acquire destination image lock in exclusive mode
-								Acquire source volume lease
-									Acquire destination volume lease
-										mark destination volume ILLEGAL
-										Copy data
-										Monitor progress
-										mark destination volume LEGAL
-									release destination volume lease
-								release source volume lease
-							Release destination image lock
-						Release source image lock
-
+						<h2>Example: Clone a volume</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<!-- TODO: Note that we do not need to acquire the domain lock -->
+						<h2>Acquire source image lock</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Acquire destination image lock</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Acquire source volume lease</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Acquire destination volume lease</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Mark destination volume illegal</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<!-- TODO: Show the ability to monitor progress -->
+						<h2>Copy data</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Mark destination volume legal</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Release destination volume lease</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Release source volume lease</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Release destination image lock</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Release source image lock</h2>
+						<img src="images/ex-copy-00.svg" class="plain" />
 					</section>
 				</section>
 
