@@ -338,55 +338,59 @@
 				</section>
 
 				<section>
-					<section>
+					<section data-transition="none">
 						<h2>Example: Clone a volume</h2>
 						<img src="images/ex-copy-00.svg" class="plain" />
 					</section>
-					<section>
+					<section data-transition="none">
+						<h2>Create another volume</h2>
+						<img src="images/ex-copy-01.svg" class="plain" />
+					</section>
+					<section data-transition="none">
 						<!-- TODO: Note that we do not need to acquire the domain lock -->
 						<h2>Acquire source image lock</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+						<img src="images/ex-copy-02.svg" class="plain" />
 					</section>
-					<section>
-						<h2>Acquire destination image lock</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+					<section data-transition="none">
+						<h2>Acquire target image lock</h2>
+						<img src="images/ex-copy-03.svg" class="plain" />
 					</section>
-					<section>
+					<section data-transition="none">
 						<h2>Acquire source volume lease</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+						<img src="images/ex-copy-04.svg" class="plain" />
 					</section>
-					<section>
-						<h2>Acquire destination volume lease</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+					<section data-transition="none">
+						<h2>Acquire target volume lease</h2>
+						<img src="images/ex-copy-05.svg" class="plain" />
 					</section>
-					<section>
-						<h2>Mark destination volume illegal</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+					<section data-transition="none">
+						<h2>Mark target volume illegal</h2>
+						<img src="images/ex-copy-06.svg" class="plain" />
 					</section>
-					<section>
+					<section data-transition="none">
 						<!-- TODO: Show the ability to monitor progress -->
 						<h2>Copy data</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+						<img src="images/ex-copy-07.svg" class="plain" />
 					</section>
-					<section>
-						<h2>Mark destination volume legal</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+					<section data-transition="none">
+						<h2>Mark target volume legal</h2>
+						<img src="images/ex-copy-08.svg" class="plain" />
 					</section>
-					<section>
-						<h2>Release destination volume lease</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+					<section data-transition="none">
+						<h2>Release target volume lease</h2>
+						<img src="images/ex-copy-09.svg" class="plain" />
 					</section>
-					<section>
+					<section data-transition="none">
 						<h2>Release source volume lease</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+						<img src="images/ex-copy-10.svg" class="plain" />
 					</section>
-					<section>
-						<h2>Release destination image lock</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+					<section data-transition="none">
+						<h2>Release target image lock</h2>
+						<img src="images/ex-copy-11.svg" class="plain" />
 					</section>
-					<section>
+					<section data-transition="none">
 						<h2>Release source image lock</h2>
-						<img src="images/ex-copy-00.svg" class="plain" />
+						<img src="images/ex-copy-12.svg" class="plain" />
 					</section>
 				</section>
 
@@ -401,6 +405,7 @@
 						</ul>
 						</li>
 						<li>Source volume before destination volume</li>
+						<li>Release the newest locks first</li>
 					</ul>
 				</section>
 

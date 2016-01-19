@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    viewBox="0 0 549.21258 407.48033"
-   sodipodi:docname="ex-copy-00.svg">
+   sodipodi:docname="ex-copy-02.svg">
   <defs
      id="defs5423">
     <linearGradient
@@ -242,7 +242,6 @@
        x2="715.42664"
        y2="-10.140798" />
     <linearGradient
-       gradientTransform="translate(1.2421875e-5,1.6403175e-6)"
        inkscape:collect="always"
        xlink:href="#sky"
        id="linearGradient6384"
@@ -251,6 +250,56 @@
        x2="836.2605"
        y2="-77.535568"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10420"
+       id="linearGradient23678"
+       x1="838.5"
+       y1="-258.00003"
+       x2="881.5"
+       y2="-258.00003"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.25,0,0,1,-210.99999,2.9999955)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10420"
+       id="linearGradient23720"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-26.063232,-59.063993)"
+       x1="872.51465"
+       y1="-198.93605"
+       x2="909.61182"
+       y2="-198.93605" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10420"
+       id="linearGradient7827"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-26.063232,-59.063993)"
+       x1="872.51465"
+       y1="-198.93605"
+       x2="909.61182"
+       y2="-198.93605" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10420"
+       id="linearGradient7833"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-26.063232,-59.063993)"
+       x1="872.51465"
+       y1="-198.93605"
+       x2="909.61182"
+       y2="-198.93605" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10420"
+       id="linearGradient7887"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-27.063232,-56.063998)"
+       x1="872.51465"
+       y1="-198.93605"
+       x2="909.61182"
+       y2="-198.93605" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -260,7 +309,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="259.34435"
+     inkscape:cx="-6.0012456"
      inkscape:cy="179.66627"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
@@ -279,7 +328,8 @@
      units="mm"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-grids="true"
-     inkscape:snap-global="true">
+     inkscape:snap-global="true"
+     inkscape:snap-text-baseline="true">
     <inkscape:grid
        type="xygrid"
        id="grid6157"
@@ -542,18 +592,64 @@
        style="opacity:1;fill:url(#linearGradient6384);fill-opacity:1.0;stroke:#000000;stroke-width:3.00000024;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path27635"
        cx="824.46448"
-       cy="-77.535576"
+       cy="-77.535568"
        r="10.29602" />
+    <rect
+       ry="20.000006"
+       rx="20.000006"
+       y="-102.00002"
+       x="892"
+       height="70"
+       width="70"
+       id="rect4249"
+       style="opacity:0.98000004;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <circle
+       r="10.29602"
+       cy="-77.535568"
+       cx="916.46448"
+       id="circle4251"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.00000024;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:27.5px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="835"
-       y="-38.000027"
+       y="-38.000019"
        id="text4255"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4257"
          x="835"
-         y="-38.000027">A</tspan></text>
+         y="-38.000019">A</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4259"
+       y="-38.000019"
+       x="927"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         id="tspan4263"
+         x="927"
+         y="-38.000019">B</tspan></text>
+    <rect
+       style="opacity:0.98000004;fill:none;fill-opacity:1;stroke:url(#linearGradient23678);stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect23672"
+       width="50"
+       height="40"
+       x="839"
+       y="-275.00003"
+       rx="6.0000124"
+       ry="6.0000124" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:url(#linearGradient7887);fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'Sans, Normal';font-stretch:normal;font-variant:normal;writing-mode:lr;"
+       x="863.74365"
+       y="-258.064"
+       id="text23680"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan19428" x="863.74365">image</tspan><tspan
+         sodipodi:role="line"
+         id="tspan19430" x="863.74365" dy="1.2em">A</tspan></text>
   </g>
 </svg>
