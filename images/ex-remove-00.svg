@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    viewBox="0 0 549.21258 407.48033"
-   sodipodi:docname="ex-create-10.svg">
+   sodipodi:docname="ex-remove-00.svg">
   <defs
      id="defs5423">
     <linearGradient
@@ -233,6 +233,21 @@
        y1="-10.140798"
        x2="715.42664"
        y2="-10.140798" />
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path15686"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -242,7 +257,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="48.799533"
+     inkscape:cx="-75.297704"
      inkscape:cy="179.66627"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
@@ -526,5 +541,10 @@
        cx="824.46448"
        cy="-77.535568"
        r="10.29602" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 834.99999,-20.00002 0,50.00001"
+       id="path28661"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
