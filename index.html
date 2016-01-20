@@ -68,6 +68,7 @@
 				</section>
 
 				<section>
+					<!-- TODO: Add a manager to the diagram -->
 					<h2>Shared vm storage</h2>
 					<img src="images/shared-storage.svg" class="plain"/>
 				</section>
@@ -83,6 +84,7 @@
 				</section>
 
 				<section>
+					<!-- TODO: label volumes in chain -->
 					<h2>oVirt image</h2>
 					<img src="images/ovirt-image.svg" class="plain" />
 				</section>
@@ -93,6 +95,7 @@
 				</section>
 
 				<section>
+					<!-- TODO: Break this up into one slide per type and put the examples below each type -->
 					<section>
 						<h2>Storage operation types</h2>
 						<img src="images/storage-operations.svg" class="plain" />
@@ -121,9 +124,9 @@
 
 				<section>
 					<section>
-						<h2>Pitfall: conflicting operations</h2>
+						<h2>Conflicting operations</h2>
 						<ul>
-							<li>Concurrent operations that should be serialized</li>
+							<li>Overlapping updates to the same logical entity</li>
 							<li>Involve one or more hosts</li>
 							<li>These are all bugs and may cause data corruption</li>
 							<li>Can be prevented with correct locking</li>
@@ -141,6 +144,7 @@
 					</section>
 
 					<section>
+						<!-- TODO: Check if this graphic makes sense -->
 						<h2>Run VM while making a template</h2>
 						<img src="images/run-vm-while-making-template.svg" class="plain" />
 					</section>
@@ -149,6 +153,7 @@
 				<section>
 					<section>
 						<h2>Locking in oVirt</h2>
+						<!-- TODO: Mention locking at the manager level to serialize high level flows -->
 						<ul>
 							<li>Storage level leases (via SANLock)
 							<ul>
@@ -159,10 +164,9 @@
 							</li>
 							<li>Process level locking (local RWLock)
 							<ul>
-								<li>Protects storage against modification by other threads </li>
-								<li>Storage domain lock</li>
-								<li>Image lock</li>
-								<li>Volume lock</li>
+								<li>Grants storage read or modify access to a thread</li>
+								<li>Storage domain lock: protects metadata</li>
+								<li>Image lock: protects volume chain and metadata</li>
 							</ul>
 							</li>
 						</ul>
@@ -179,10 +183,11 @@
 								<li>Failure to renew will surrender all resource leases</li>
 							</ul>
 							</li>
-							<li>Resource leases</li>
-							<li><ul>
+							<li>Resource leases
+							<ul>
 								<li>Represent an arbitrary resource (storage or otherwise)</li>
-							</ul></li>
+							</ul>
+							</li>
 							<li>Misbehaving hosts will be fenced (rebooted)</li>
 						</ul>
 					</section>
@@ -190,19 +195,18 @@
 
 				<section>
 					<section>
-						<h2>Pitfall: interruptions</h2>
+						<h2>Interrupted operations</h2>
 						<ul>
 							<li>Some steps in a task are never completed</li>
-							<li>Guaranteed to happen eventually</li>
-							<li>Caused by
+							<li>Happen naturally or due to bugs
 							<ul>
 								<li>Power or network outage</li>
 								<li>Hardware failure</li>
 								<li>Software failure</li>
 							</ul>
 							</li>
-							<li>Not bugs but must be mitigated to avoid corruption</li>
-							<li>Graceful recovery
+							<li>Must be handled carefully to keep data coherent</li>
+							<li>Approaches
 							<ul>
 								<li>Task manager with rollback capability</li>
 								<li>Transactions with garbage collection</li>
@@ -223,39 +227,45 @@
 				</section>
 
 				<section>
-					<h2>Task manager with rollback</h2>
-					<ul>
-						<li>Original solution adopted by oVirt</li>
-						<li>Requires tasks to be persistent on storage</li>
-						<li>Rollbacks cannot always be executed</li>
-						<li>Only one host can execute these tasks at a time</li>
-					</ul>
+					<section>
+						<h2>Storage transactions</h2>
+						<ul>
+							<li>All storage commands are granular: one transaction</li>
+							<li>A transaction is opened with a marker operation</li>
+							<li>Subsequent steps accumulate "garbage" on storage</li>
+							<li>A transaction is committed by converting the start marker</li>
+						</ul>
+					</section>
+					<!-- TODO: Example abstract transaction -->
 				</section>
 
 				<section>
-					<h2>Transactions</h2>
-					<ul>
-						<li>Multi-step tasks accumulate garbage on storage</li>
-						<li>Committed with an atomic storage update</li>
-						<li>Tasks are only visible on the host while running</li>
-						<li>Evidence of success or failure is on storage</li>
-					</ul>
+					<section>
+						<h2>Garbage collection</h2>
+						<ul>
+							<ul>Runs periodically on an arbitrary host</ul>
+							<ul>Identifies candidates by finding markers</ul>
+							<ul>Acquires necessary locks for the candidate</ul>
+							<ul>Verifies the candidate is actually garbage</ul>
+							<ul>Cleans garbage associated with the marker</ul>
+							<ul>Removes the marker</ul>
+						</ul>
+					</section>
+					<!-- TODO: Example abstract garbage collection -->
 				</section>
 
 				<section>
-					<h2>Garbage collection</h2>
+					<h2>Monitoring and resolution</h2>
 					<ul>
-						<li>Lock-less scan to identify garbage candidates
-						<ul>
-							<li>eg. *.tmp files and directories</li>
-						</ul>
-						<li>Validate and clean garbage under lock
-						<ul>
-							<li>Acquired locks validate that this is garbage</li>
-							<li>The garbage indicates what should be cleaned</li>
-						</ul>
-						<li>Scheduled to run periodically on one host</li>
-						<li>May be run by a host directly in some cases</li>
+						<li>Running commands raise events or can be polled
+							<ul>
+								<li>Progress</li>
+								<li>State changes</li>
+								<li>Error code and context</li>
+							</ul>
+						</li>
+						<li>Command results are not persistent</li>
+						<li>Success or failure is evident by examining storage</li>
 					</ul>
 				</section>
 
@@ -370,6 +380,7 @@
 						<h2>Copy data</h2>
 						<img src="images/ex-copy-07.svg" class="plain" />
 					</section>
+					<!-- TODO: Show progress event -->
 					<section data-transition="none">
 						<h2>Mark target volume legal</h2>
 						<img src="images/ex-copy-08.svg" class="plain" />
@@ -390,6 +401,7 @@
 						<h2>Release source image lock</h2>
 						<img src="images/ex-copy-12.svg" class="plain" />
 					</section>
+					<!-- TODO: Show completion event -->
 				</section>
 
 				<section>
