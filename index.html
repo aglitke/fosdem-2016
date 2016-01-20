@@ -68,7 +68,6 @@
 				</section>
 
 				<section>
-					<!-- TODO: Add a manager to the diagram -->
 					<h2>Shared vm storage</h2>
 					<img src="images/shared-storage.svg" class="plain"/>
 				</section>
@@ -84,7 +83,6 @@
 				</section>
 
 				<section>
-					<!-- TODO: label volumes in chain -->
 					<h2>oVirt image</h2>
 					<img src="images/ovirt-image.svg" class="plain" />
 				</section>
@@ -95,29 +93,50 @@
 				</section>
 
 				<section>
-					<!-- TODO: Break this up into one slide per type and put the examples below each type -->
+					<h2>Storage operation types</h2>
+					<img src="images/storage-operations.svg" class="plain" />
+				</section>
+
+				<section>
 					<section>
-						<h2>Storage operation types</h2>
-						<img src="images/storage-operations.svg" class="plain" />
+						<h2>Datapath operations</h2>
+						<ul>
+							<li>Reading and writing the contents of a volume</li>
+							<li>These are the most common and most important</li>
+							<li>Lots of IO</li>
+							<li>Long running</li>
+						</ul>
 					</section>
 
 					<section>
-						<h2>Datapath: volume access</h2>
+						<h2>Example: volume access</h2>
 						<img src="images/concurrent-volume-access.svg" class="plain" />
 					</section>
 
 					<section>
-						<h2>Datapath: volume copy</h2>
+						<h2>Example: volume copy</h2>
 						<img src="images/host-copy-volume.svg" class="plain" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Metadata operations</h2>
+						<ul>
+							<li>Adding / removing / rearranging storage objects</li>
+							<li>Changing storage domain metadata</li>
+							<li>Minimal IO</li>
+							<li>Short running</li>
+						</ul>
 					</section>
 
 					<section>
-						<h2>Metadata: volume create</h2>
+						<h2>Example: create volume</h2>
 						<img src="images/create-volume.svg" class="plain" />
 					</section>
 
 					<section>
-						<h2>Metadata: image delete</h2>
+						<h2>Example: delete image</h2>
 						<img src="images/delete-image.svg" class="plain" />
 					</section>
 				</section>
@@ -128,8 +147,8 @@
 						<ul>
 							<li>Overlapping updates to the same logical entity</li>
 							<li>Involve one or more hosts</li>
-							<li>These are all bugs and may cause data corruption</li>
-							<li>Can be prevented with correct locking</li>
+							<li>Very likely to corrupt data</li>
+							<li>Preventable with extremely careful locking</li>
 						</ul>
 					</section>
 
@@ -144,36 +163,42 @@
 					</section>
 
 					<section>
-						<!-- TODO: Check if this graphic makes sense -->
-						<h2>Run VM while making a template</h2>
-						<img src="images/run-vm-while-making-template.svg" class="plain" />
+						<h2>Run VM during snapshot</h2>
+						<img src="images/run-vm-while-creating-snapshot.svg" class="plain" />
 					</section>
 				</section>
 
 				<section>
+					<h2>Flow-level locking</h2>
+					<ul>
+						<li>Implemented at the management server level</li>
+						<li>Serializes user-driven actions
+							<ul>
+								<li>Lock an image during creation</li>
+								<li>Lock a VM while taking a snapshot</li>
+								<li>Lock a host while it modifies storage</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
 					<section>
-						<h2>Locking in oVirt</h2>
-						<!-- TODO: Mention locking at the manager level to serialize high level flows -->
+						<h2>Shared storage locking</h2>
 						<ul>
-							<li>Storage level leases (via SANLock)
-							<ul>
-								<li>Protects storage against modification by other hosts</li>
-								<li>Storage domain lease: protects metadata</li>
-								<li>Volume lease: protects volume contents</li>
-							</ul>
-							</li>
-							<li>Process level locking (local RWLock)
-							<ul>
-								<li>Grants storage read or modify access to a thread</li>
-								<li>Storage domain lock: protects metadata</li>
-								<li>Image lock: protects volume chain and metadata</li>
-							</ul>
+							<li>Implemented using <a href="https://fedorahosted.org/sanlock">SANLock</a></li>
+							<li>Lockspace exists on the shared storage itself</li>
+							<li>Leases grant hosts exclusive access to storage resources
+								<ul>
+									<li>Storage domain lease: needed for metadata changes</li>
+									<li>Volume lease: protects volume contents</li>
+								</ul>
 							</li>
 						</ul>
 					</section>
 
 					<section>
-						<h2>A word about sanlock</h2>
+						<h2>More about sanlock</h2>
 						<ul>
 							<li>Host IDs
 							<ul>
@@ -194,6 +219,19 @@
 				</section>
 
 				<section>
+					<h2>Process level locking</h2>
+					<ul>
+						<li>Implemented with a lock manager and RWLocks</li>
+						<li>Locks grant storage read or modify access to a thread
+							<ul>
+								<li>Storage domain lock: protects metadata</li>
+								<li>Image lock: protects volume chain and metadata</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
 					<section>
 						<h2>Interrupted operations</h2>
 						<ul>
@@ -205,12 +243,12 @@
 								<li>Software failure</li>
 							</ul>
 							</li>
-							<li>Must be handled carefully to keep data coherent</li>
+							<li>Must be handled carefully to keep storage coherent</li>
 							<li>Approaches
-							<ul>
-								<li>Task manager with rollback capability</li>
-								<li>Transactions with garbage collection</li>
-							</ul>
+								<ul>
+									<li>Task manager with rollback capability</li>
+									<li>Transactions with garbage collection</li>
+								</ul>
 							</li>
 						</ul>
 					</section>
@@ -420,10 +458,9 @@
 				</section>
 
 				<section>
-					<h2>Resources</h2>
+					<h2>oVirt Resources</h2>
 					<ul>
 						<li><a href="http://www.ovirt.org/">http://www.ovirt.org</a></li>
-						<li><a href="https://fedorahosted.org/sanlock/">https://fedorahosted.org/sanlock/</a></li>
 						<li><a href="irc://irc.oftc.net/ovirt">irc://irc.oftc.net/ovirt</a></li>
 						<li><a href="http://lists.ovirt.org/mailman/listinfo/devel">http://lists.ovirt.org/mailman/listinfo/devel</a></li>
 						<li><a href="http://lists.ovirt.org/mailman/listinfo/users">http://lists.ovirt.org/mailman/listinfo/users</a></li>

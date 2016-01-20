@@ -119,7 +119,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="132.6682"
+     inkscape:cx="153.52785"
      inkscape:cy="185.30604"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
@@ -200,7 +200,7 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:url(#white);fill-opacity:1;stroke:url(#Black);stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 682.85305,89.254523 c 1.07545,28.294227 -29.86908,51.035497 -56.58448,41.682007 -27.35894,-7.34054 -40.01149,-43.578284 -23.14078,-66.317758 15.10567,-23.949455 53.49789,-25.307594 70.26162,-2.485532 6.09614,7.633615 9.48796,17.357617 9.46364,27.121283 z"
+       d="m 682.85305,89.254521 c 1.07545,28.294229 -29.86908,51.035499 -56.58448,41.682009 -27.35894,-7.34054 -40.01149,-43.578286 -23.14078,-66.31776 15.10567,-23.949455 53.49789,-25.307594 70.26162,-2.485532 6.09614,7.633615 9.48796,17.357617 9.46364,27.121283 z"
        id="circle10977"
        inkscape:connector-curvature="0" />
     <path
@@ -220,5 +220,49 @@
          id="tspan11096"
          x="722.26025"
          y="-158.87138">Volumes</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:60px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="639.17981"
+       y="-53.550632"
+       id="text7756"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7758"
+         x="639.17981"
+         y="-53.550632">A</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7760"
+       y="111.29568"
+       x="638.34485"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         id="tspan7764"
+         x="638.34485"
+         y="111.29568">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="804.95892"
+       y="-53.579948"
+       id="text7766"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7770"
+         x="804.95892"
+         y="-53.579948">C</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7772"
+       y="111.29566"
+       x="803.8017"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         id="tspan7776"
+         x="803.8017"
+         y="111.29566">D</tspan></text>
   </g>
 </svg>
