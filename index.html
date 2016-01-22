@@ -52,6 +52,8 @@
 					</p>
 				</section>
 
+				<!-- TODO: This sequence is a bit awkward.  Consider simplifying
+				 by showing just a single ovirt architecture diagram -->
 				<section>
 					<h2>Local vm storage</h2>
 					<img src="images/single-host-single-vm.svg" class="plain"/>
@@ -92,6 +94,8 @@
 					<img src="images/ovirt-volume.svg" class="plain" />
 				</section>
 
+				<!-- TODO: Awkward transition: Maybe we need a preface slide to
+				summarize op types, conflcts, interruptions, etc -->
 				<section>
 					<h2>Storage operation types</h2>
 					<img src="images/storage-operations.svg" class="plain" />
@@ -105,6 +109,7 @@
 							<li>These are the most common and most important</li>
 							<li>Lots of IO</li>
 							<li>Long running</li>
+							<li>Narrow in scope</li>
 						</ul>
 					</section>
 
@@ -127,6 +132,7 @@
 							<li>Changing storage domain metadata</li>
 							<li>Minimal IO</li>
 							<li>Short running</li>
+							<li>Broad in scope</li>
 						</ul>
 					</section>
 
@@ -143,10 +149,10 @@
 
 				<section>
 					<section>
-						<h2>Conflicting operations</h2>
+						<h2>Preventing conflicts</h2>
 						<ul>
-							<li>Overlapping updates to the same logical entity</li>
-							<li>Involve one or more hosts</li>
+							<li>Simultaneous updates within the same scope</li>
+							<li>Can involve one or more hosts</li>
 							<li>Very likely to corrupt data</li>
 							<li>Preventable with extremely careful locking</li>
 						</ul>
@@ -233,7 +239,7 @@
 
 				<section>
 					<section>
-						<h2>Interrupted operations</h2>
+						<h2>Interruptions</h2>
 						<ul>
 							<li>Some steps in a task are never completed</li>
 							<li>Happen naturally or due to bugs
@@ -243,7 +249,7 @@
 								<li>Software failure</li>
 							</ul>
 							</li>
-							<li>Must be handled carefully to keep storage coherent</li>
+							<li>Must be carefully mitigated to keep storage coherent</li>
 							<li>Approaches
 								<ul>
 									<li>Task manager with rollback capability</li>
@@ -274,22 +280,53 @@
 							<li>A transaction is committed by converting the start marker</li>
 						</ul>
 					</section>
-					<!-- TODO: Example abstract transaction -->
+					<section>
+						<h2>Example</h2>
+						<img src="images/ex-transaction.svg" class="plain" />
+					</section>
 				</section>
 
 				<section>
 					<section>
 						<h2>Garbage collection</h2>
 						<ul>
-							<ul>Runs periodically on an arbitrary host</ul>
-							<ul>Identifies candidates by finding markers</ul>
-							<ul>Acquires necessary locks for the candidate</ul>
-							<ul>Verifies the candidate is actually garbage</ul>
-							<ul>Cleans garbage associated with the marker</ul>
-							<ul>Removes the marker</ul>
+							<li>Runs periodically on an arbitrary host</li>
+							<li>Identifies candidates by finding markers</li>
+							<li>Acquires necessary locks for the candidate</li>
+							<li>Verifies the candidate should be collected</li>
+							<li>Cleans garbage associated with the marker</li>
+							<li>Removes the marker</li>
 						</ul>
 					</section>
 					<!-- TODO: Example abstract garbage collection -->
+					<section>
+						<h2>Identify candidate</h2>
+						<img src="images/ex-gc-00.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Acquire locks</h2>
+						<img src="images/ex-gc-01.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Clean</h2>
+						<img src="images/ex-gc-02.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Remove marker</h2>
+						<img src="images/ex-gc-03.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Identify candidate</h2>
+						<img src="images/ex-gc-04.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Acquire locks</h2>
+						<img src="images/ex-gc-05.svg" class="plain" />
+					</section>
+					<section>
+						<h2>Abort</h2>
+						<img src="images/ex-gc-06.svg" class="plain" />
+					</section>
 				</section>
 
 				<section>
@@ -418,7 +455,10 @@
 						<h2>Copy data</h2>
 						<img src="images/ex-copy-07.svg" class="plain" />
 					</section>
-					<!-- TODO: Show progress event -->
+					<section data-transition="none">
+						<h2>Progress event</h2>
+						<img src="images/ex-copy-07b.svg" class="plain" />
+					</section>
 					<section data-transition="none">
 						<h2>Mark target volume legal</h2>
 						<img src="images/ex-copy-08.svg" class="plain" />
@@ -440,6 +480,10 @@
 						<img src="images/ex-copy-12.svg" class="plain" />
 					</section>
 					<!-- TODO: Show completion event -->
+					<section data-transition="none">
+						<h2>Completion event</h2>
+						<img src="images/ex-copy-12b.svg" class="plain" />
+					</section>
 				</section>
 
 				<section>
