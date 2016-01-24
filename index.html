@@ -52,13 +52,12 @@
 					</p>
 				</section>
 
-				<!-- TODO: This sequence is a bit awkward.  Consider simplifying
-				 by showing just a single ovirt architecture diagram -->
 				<section>
 					<h2>Local vm storage</h2>
 					<img src="images/single-host-single-vm.svg" class="plain"/>
 				</section>
 
+				<!--
 				<section>
 					<h2>Local vm storage</h2>
 					<img src="images/single-host-many-vms.svg" class="plain"/>
@@ -68,6 +67,7 @@
 					<h2>Multi-host local vm storage</h2>
 					<img src="images/many-hosts-many-vms.svg" class="plain"/>
 				</section>
+				-->
 
 				<section>
 					<h2>Shared vm storage</h2>
@@ -94,8 +94,16 @@
 					<img src="images/ovirt-volume.svg" class="plain" />
 				</section>
 
-				<!-- TODO: Awkward transition: Maybe we need a preface slide to
-				summarize op types, conflcts, interruptions, etc -->
+				<section>
+					<h2>Managing shared storage</h2>
+					<ul>
+						<li>Storage operation types</li>
+						<li>Preventing conflicts</li>
+						<li>Mitigating interruptions</li>
+
+					</ul>
+				</section>
+
 				<section>
 					<h2>Storage operation types</h2>
 					<img src="images/storage-operations.svg" class="plain" />
@@ -151,10 +159,14 @@
 					<section>
 						<h2>Preventing conflicts</h2>
 						<ul>
-							<li>Simultaneous updates within the same scope</li>
-							<li>Can involve one or more hosts</li>
-							<li>Very likely to corrupt data</li>
-							<li>Preventable with extremely careful locking</li>
+							<li>Goal: maximize concurrency</li>
+							<li>Goal: no data corruption</li>
+							<li>Interaction between storage objects is complex</li>
+							<li>Orchestration required across several domains
+								<ul>User actions</ul>
+								<ul>Hosts</ul>
+								<ul>Local threads</ul>
+							</li>
 						</ul>
 					</section>
 
@@ -227,8 +239,8 @@
 				<section>
 					<h2>Process level locking</h2>
 					<ul>
-						<li>Implemented with a lock manager and RWLocks</li>
-						<li>Locks grant storage read or modify access to a thread
+						<li>Implemented with a local lock manager and RWLocks</li>
+						<li>Locks grant threads either shared or exclusive access
 							<ul>
 								<li>Storage domain lock: protects metadata</li>
 								<li>Image lock: protects volume chain and metadata</li>
@@ -252,8 +264,8 @@
 							<li>Must be carefully mitigated to keep storage coherent</li>
 							<li>Approaches
 								<ul>
-									<li>Task manager with rollback capability</li>
-									<li>Transactions with garbage collection</li>
+									<li>Storage task manager with rollback capability</li>
+									<li>Storage transactions with garbage collection</li>
 								</ul>
 							</li>
 						</ul>
@@ -298,7 +310,6 @@
 							<li>Removes the marker</li>
 						</ul>
 					</section>
-					<!-- TODO: Example abstract garbage collection -->
 					<section>
 						<h2>Identify candidate</h2>
 						<img src="images/ex-gc-00.svg" class="plain" />
@@ -479,7 +490,6 @@
 						<h2>Release source image lock</h2>
 						<img src="images/ex-copy-12.svg" class="plain" />
 					</section>
-					<!-- TODO: Show completion event -->
 					<section data-transition="none">
 						<h2>Completion event</h2>
 						<img src="images/ex-copy-12b.svg" class="plain" />
