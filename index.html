@@ -521,8 +521,10 @@
 				<section>
 					<h2>Questions?</h2>
 				</section>
-
 			</div>
+		</div>
+
+		<div id="footer" style="display: none;">
 			<p class="footer">Sweeping Away the Garbage - FOSDEM 30.01.2016</p>
 		</div>
 
@@ -551,6 +553,20 @@
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+		</script>
+
+		<script type="application/javascript">
+			var footer = document.getElementById("footer");
+			if (window.location.search.match( /print-pdf/gi )) {
+				var slide_backgrounds = document.getElementsByClassName("slide-background");
+				for (var i=0; i<slide_backgrounds.length; i++) {
+					var bg = slide_backgrounds[i];
+					bg.innerHTML = bg.innerHTML + footer.innerHTML;
+				}
+			} else {
+				var slides_div = document.getElementsByClassName("slides")[0];
+				slides_div.innerHTML = slides_div.innerHTML + footer.innerHTML;
+			}
 		</script>
 	</body>
 </html>
