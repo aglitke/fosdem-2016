@@ -21,9 +21,17 @@
   <defs
      id="defs5423">
     <linearGradient
+       id="linearGradient4331"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#d8e7c4;stop-opacity:1;"
+         offset="0"
+         id="stop4333" />
+    </linearGradient>
+    <linearGradient
        id="white"
        osb:paint="solid"
-       gradientTransform="translate(-32.484366,-195.00734)">
+       gradientTransform="matrix(1.1070436,0,0,1.1070436,449.04943,-344.45134)">
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
          offset="0"
@@ -109,7 +117,7 @@
        xlink:href="#wood"
        id="linearGradient10434"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(27.577164,38.89087)"
+       gradientTransform="matrix(1.0521614,0,0,1.0521614,265.3572,-21.731404)"
        x1="348.5"
        y1="-12.000008"
        x2="411.5"
@@ -126,14 +134,33 @@
        y2="-12.000008" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#stars"
+       xlink:href="#Black"
        id="linearGradient10446"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0521614,0,0,1.0521614,348.95202,-1.7161689)"
+       x1="348.5"
+       y1="-12.000008"
+       x2="411.5"
+       y2="-12.000008" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#stars"
+       id="linearGradient4325"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(376.37129,234.07656)"
        x1="348.5"
        y1="-12.000008"
        x2="411.5"
        y2="-12.000008" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#Black"
+       id="linearGradient4335"
+       x1="715.63031"
+       y1="-14.342098"
+       x2="781.9165"
+       y2="-14.342098"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -143,13 +170,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="187.50573"
+     inkscape:cx="135.17983"
      inkscape:cy="165.20414"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:window-width="1680"
-     inkscape:window-height="984"
+     inkscape:window-width="1920"
+     inkscape:window-height="1014"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -210,31 +237,28 @@
            id="tspan10452"
            sodipodi:role="line">NFS</tspan></text>
     </g>
-    <g
-       id="g10502"
-       transform="matrix(1.0521614,0,0,1.0521614,254.72635,-64.06509)">
-      <rect
-         style="fill:url(#linearGradient10434);fill-opacity:1;stroke:#6f2908;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect10432"
-         width="60"
-         height="60"
-         x="377.57718"
-         y="-3.109134" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text10467"
-         y="32.482899"
-         x="407.16336"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:url(#white);fill-opacity:1;stroke:url(#white);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="32.482899"
-           x="407.16336"
-           id="tspan10469"
-           sodipodi:role="line">Gluster</tspan></text>
-    </g>
+    <rect
+       y="-65.922188"
+       x="633.61371"
+       height="63.129684"
+       width="63.129684"
+       id="rect10432"
+       style="fill:url(#linearGradient10434);fill-opacity:1;stroke:#6f2908;stroke-width:3.15648413;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.78242111px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:url(#white);fill-opacity:1;stroke:url(#white);stroke-width:1.05216146px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="664.74316"
+       y="-28.473623"
+       id="text10467"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10469"
+         x="664.74316"
+         y="-28.473623"
+         style="stroke-width:1.05216146px">Gluster</tspan></text>
     <g
        id="g10510"
-       transform="matrix(1.0521614,0,0,1.0521614,317.96553,-258.24658)">
+       transform="matrix(1.0521614,0,0,1.0521614,299.58076,-261.78212)">
       <rect
          y="92.916702"
          x="376.48621"
@@ -256,30 +280,26 @@
            sodipodi:role="line">iSCSI</tspan></text>
     </g>
     <g
-       id="g10515"
-       transform="matrix(1.0521614,0,0,1.0521614,-13.1102,-279.8223)">
+       id="g4342"
+       transform="translate(13.313708,-7.656854)">
       <rect
-         style="fill:url(#linearGradient10446);fill-opacity:1;stroke:#d8e7c4;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:url(#linearGradient10446);fill-opacity:1;stroke:url(#linearGradient4335);stroke-width:3.15648413;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect10444"
-         width="60"
-         height="60"
-         x="726.37134"
-         y="192.07657" />
+         width="63.129684"
+         height="63.129684"
+         x="717.20856"
+         y="-45.90694" />
       <text
          sodipodi:linespacing="125%"
          id="text10493"
-         y="218.29361"
-         x="756.64966"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         y="-10.713601"
+         x="748.9693"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           y="218.29361"
-           x="756.64966"
-           id="tspan10495"
-           sodipodi:role="line">Fibre</tspan><tspan
-           id="tspan10497"
-           y="233.91861"
-           x="756.64966"
-           sodipodi:role="line">Channel</tspan></text>
+           y="-10.713601"
+           x="748.9693"
+           id="tspan4337"
+           sodipodi:role="line">Ceph</tspan></text>
     </g>
     <g
        id="g5092"
@@ -452,5 +472,31 @@
          id="tspan6406-1"
          x="934.26422"
          y="31.188995">Engine</tspan></text>
+    <g
+       transform="matrix(1.0521614,0,0,1.0521614,10.93143,-332.1482)"
+       id="g4315">
+      <rect
+         y="192.07657"
+         x="726.37134"
+         height="60"
+         width="60"
+         id="rect4317"
+         style="fill:url(#linearGradient4325);fill-opacity:1;stroke:#d8e7c4;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="756.64966"
+         y="218.29361"
+         id="text4319"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4321"
+           x="756.64966"
+           y="218.29361">Fibre</tspan><tspan
+           sodipodi:role="line"
+           x="756.64966"
+           y="233.91861"
+           id="tspan4323">Channel</tspan></text>
+    </g>
   </g>
 </svg>

@@ -52,6 +52,16 @@
 				</section>
 
 				<section>
+					<h2>The next 40 minutes</h2>
+					<ul>
+						<li>oVirt shared storage architecture</li>
+						<li>Preventing data corruption</li>
+						<li>Recovering from failure</li>
+						<li>Examples</li>
+					</ul>
+				</section>
+
+				<section>
 					<h2>Local vm storage</h2>
 					<img src="images/single-host-single-vm.svg" class="plain"/>
 				</section>
@@ -92,17 +102,7 @@
 				</section>
 
 				<section>
-					<h2>Managing shared storage</h2>
-					<ul>
-						<li>Storage operation types</li>
-						<li>Preventing conflicts</li>
-						<li>Mitigating interruptions</li>
-
-					</ul>
-				</section>
-
-				<section>
-					<h2>Storage operation types</h2>
+					<h2>Storage operations</h2>
 					<img src="images/storage-operations.svg" class="plain" />
 				</section>
 
@@ -110,7 +110,7 @@
 					<section>
 						<h2>Datapath operations</h2>
 						<ul>
-							<li>Reading and writing the contents of a volume</li>
+							<li>A VM or host accessing volume contents</li>
 							<li>These are the most common and most important</li>
 							<li>Lots of IO</li>
 							<li>Long running</li>
@@ -119,12 +119,12 @@
 					</section>
 
 					<section>
-						<h2>Example: volume access</h2>
+						<h2>Example: VM volume access</h2>
 						<img src="images/concurrent-volume-access.svg" class="plain" />
 					</section>
 
 					<section>
-						<h2>Example: volume copy</h2>
+						<h2>Example: Host volume access</h2>
 						<img src="images/host-copy-volume.svg" class="plain" />
 					</section>
 				</section>
@@ -137,7 +137,7 @@
 							<li>Changing storage domain metadata</li>
 							<li>Minimal IO</li>
 							<li>Short running</li>
-							<li>Broad in scope</li>
+							<li>Can have broad scope</li>
 						</ul>
 					</section>
 
@@ -153,11 +153,16 @@
 				</section>
 
 				<section>
+					<h2>Challenge: conflicts</h2>
+					<!-- TODO: Graphic -->
+				</section>
+
+				<section>
 					<section>
 						<h2>Preventing conflicts</h2>
 						<ul>
+							<li>Requirement: data integrity</li>
 							<li>Goal: maximize concurrency</li>
-							<li>Goal: no data corruption</li>
 							<li>Interaction between storage objects is complex</li>
 							<li>Orchestration required across several domains
 								<ul>User actions</ul>
@@ -184,10 +189,14 @@
 				</section>
 
 				<section>
-					<h2>Flow-level locking</h2>
+					<h2>Solution: Locking</h2>
+					<img class="plain" src="images/locking.svg" />
+				</section>
+
+				<section>
+					<h2>Management level locking</h2>
 					<ul>
-						<li>Implemented at the management server level</li>
-						<li>Serializes user-driven actions
+						<li>Entities are locked while executing user-driven actions
 							<ul>
 								<li>Lock an image during creation</li>
 								<li>Lock a VM while taking a snapshot</li>
@@ -201,8 +210,8 @@
 					<section>
 						<h2>Shared storage locking</h2>
 						<ul>
-							<li>Implemented using <a href="https://fedorahosted.org/sanlock">SANLock</a></li>
-							<li>Lockspace exists on the shared storage itself</li>
+							<li>Implemented using <a href="https://fedorahosted.org/sanlock">Sanlock</a></li>
+							<li>Lockspace is on shared storage </li>
 							<li>Leases grant hosts exclusive access to storage resources
 								<ul>
 									<li>Storage domain lease: needed for metadata changes</li>
@@ -246,9 +255,15 @@
 					</ul>
 				</section>
 
+
+				<section>
+					<h2>Challenge: interruptions</h2>
+					<!-- TODO: Graphic -->
+				</section>
+
 				<section>
 					<section>
-						<h2>Interruptions</h2>
+						<h2>Handling interruptions</h2>
 						<ul>
 							<li>Some steps in a task are never completed</li>
 							<li>Happen naturally or due to bugs
@@ -280,10 +295,15 @@
 				</section>
 
 				<section>
+					<h2>Solution: Transactional Storage</h2>
+					<!-- TODO: Graphic -->
+				</section>
+
+				<section>
 					<section>
 						<h2>Storage transactions</h2>
 						<ul>
-							<li>All storage commands are granular: one transaction</li>
+							<li>Storage commands must be a single transaction</li>
 							<li>A transaction is opened with a marker operation</li>
 							<li>Subsequent steps accumulate "garbage" on storage</li>
 							<li>A transaction is committed by converting the start marker</li>
@@ -353,6 +373,15 @@
 				</section>
 
 				<section>
+					<h2>Practical examples</h2>
+					<ul>
+						<li>Create volume</li>
+						<li>Remove volume</li>
+						<li>Clone volume</li>
+					</ul>
+				</section>
+
+				<section>
 					<section data-transition="none">
 						<h2>Example: Create volume</h2>
 						<img src="images/ex-create-00.svg" class="plain" />
@@ -400,8 +429,11 @@
 				</section>
 
 				<section>
-					<section data-transition="none">
+					<section>
 						<h2>Example: Remove volume</h2>
+					</section>
+					<section data-transition="none">
+						<h2>Initial state</h2>
 						<img src="images/ex-remove-00.svg" class="plain" />
 					</section>
 					<section data-transition="none">
@@ -431,8 +463,11 @@
 				</section>
 
 				<section>
+					<section>
+						<h2>Example: Clone volume</h2>
+					</section>
 					<section data-transition="none">
-						<h2>Example: Clone a volume</h2>
+						<h2>Initial state</h2>
 						<img src="images/ex-copy-00.svg" class="plain" />
 					</section>
 					<section data-transition="none">
@@ -564,8 +599,8 @@
 					bg.innerHTML = bg.innerHTML + footer.innerHTML;
 				}
 			} else {
-				var slides_div = document.getElementsByClassName("slides")[0];
-				slides_div.innerHTML = slides_div.innerHTML + footer.innerHTML;
+				//var slides_div = document.getElementsByClassName("slides")[0];
+				//slides_div.innerHTML = slides_div.innerHTML + footer.innerHTML;
 			}
 		</script>
 	</body>
